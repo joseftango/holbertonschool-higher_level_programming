@@ -1,0 +1,36 @@
+===============
+Doctest say_my_name
+===============
+
+Import the function:
+
+    >>> say_my_name = __import__('3-say_my_name').say_my_name
+
+possible tests:
+
+    >>> say_my_name("hello","world")
+    My name is hello world
+
+    >>> say_my_name("cristiano","ronaldo")
+    My name is cristiano ronaldo
+
+    >>> say_my_name("josef","martinez")
+    My name is josef martinez
+
+    >>> say_my_name("mohamed","salah")
+    My name is mohamed salah
+
+    >>> say_my_name(5,"hello")
+    Traceback (most recent call last):
+                ...
+    TypeError: first_name must be a string
+
+    >>> say_my_name("ahmed",80)
+    Traceback (most recent call last):
+                ...
+    TypeError: last_name must be a string
+
+    >>> say_my_name(20,10)
+    Traceback (most recent call last):
+                ...
+    TypeError: first_name must be a string
