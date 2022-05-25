@@ -1,0 +1,35 @@
+====================
+Doctest print_square
+====================
+
+Import the function:
+
+    >>> print_square = __import__('4-print_square').print_square
+
+possible tests:
+
+    >>> print_square(4)
+    ####
+    ####
+    ####
+    ####
+
+    >>> print_square(8)
+    ########
+    ########
+    ########
+    ########
+    ########
+    ########
+    ########
+    ########
+
+    >>> print_square("55")
+    Traceback (most recent call last):
+            ...
+    TypeError: size must be an integer
+
+    >>> print_square(-5)
+    raceback (most recent call last):
+            ...
+    ValueError: size must be >= 0
