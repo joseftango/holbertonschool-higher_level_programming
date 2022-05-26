@@ -1,9 +1,9 @@
 #!/usr/bin/python3
-""" this is the class """
+""" this class define Rectangle """
 
 
 class Rectangle:
-    """class named Rectangle"""
+    """ class named Rectangle """
 
     def __init__(self, width=0, height=0):
         """initializing method"""
