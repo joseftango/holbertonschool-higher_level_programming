@@ -1,0 +1,33 @@
+=======================
+Doctest matrix division
+=======================
+
+Import the function:
+
+        >>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+
+possible tests:
+
+        >>> matrix_divided(matrix, 3)
+        [[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
+
+        >>> matrix_divided(matrix, 155)
+        [[0.01, 0.01, 0.02], [0.03, 0.03, 0.04]]
+
+        >>> matrix_divided(matrix, 1000000)
+        [[0.0, 0.0, 0.0], [0.0, 0.0, 0.0]]
+
+        >>> matrix_divided([[3]], 5)
+        [[0.6]]
+
+        >>> matrix_divided([[3],[6]], 5)
+        [[0.6], [1.2]]
+
+        >>> matrix_divided([[-14],[-13]], -5)
+        [[2.8], [2.6]]
+
+        >>> matrix_divided(matrix , 10 - 5)
+        [[0.2, 0.4, 0.6], [0.8, 1.0, 1.2]]
+
+        >>> matrix_divided(matrix , -100000)
+        [[-0.0, -0.0, -0.0], [-0.0, -0.0, -0.0]]
