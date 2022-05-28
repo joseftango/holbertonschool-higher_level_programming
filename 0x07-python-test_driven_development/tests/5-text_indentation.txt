@@ -1,0 +1,27 @@
+================
+text_indentation
+================
+
+Import the function:
+    text_indentation = __import__('5-text_indentation).text_indentation
+
+possible tests:
+
+    >>> text_indentation("""josef?mohamed.alen:""")
+    josef?
+
+    mohamed.
+
+    alen:
+
+    >>> text_indentation("hello.hi:bye?")
+    hello.
+
+    hi:
+
+    bye?
+
+    >>> text_indentation(5)
+    Traceback (most recent call last):
+                ...
+    TypeError: 'int' object is not iterable
