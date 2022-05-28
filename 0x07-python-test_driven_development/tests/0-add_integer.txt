@@ -49,12 +49,12 @@ possible tests:
        >>> add_integer(100.3, 100.3)
        200
 
-       >>> add_integer("hello")
+       >>> add_integer("hello", 1)
        Traceback (most recent call last):
                      ...
        TypeError: a must be an integer
 
-       >>> add_integer(5,"hi")
-       Traceback: (most recent call last):
+       >>> add_integer(1, "hi")
+       Traceback (most recent call last):
                      ...
        TypeError: b must be an integer
