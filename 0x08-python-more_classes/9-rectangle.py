@@ -81,4 +81,5 @@ class Rectangle:
 
     @classmethod
     def square(cls, size=0):
+        """square a class method that returns new argument of the class"""
         return cls(height=size, width=size)
