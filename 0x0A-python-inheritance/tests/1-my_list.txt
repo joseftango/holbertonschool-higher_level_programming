@@ -1,0 +1,48 @@
+=============================
+The 1-my_list module
+=============================
+
+Import the class:
+
+    >>> MyList = __import__('1-my_list').MyList
+
+possible test:
+
+    >>> my_list = MyList()
+
+    >>> my_list
+    []
+
+    >>> my_list.append(1)
+
+    >>> my_list.append(4)
+
+    >>> my_list.append(2)
+
+    >>> my_list
+    [1, 4, 2]
+
+    >>> my_list.print_sorted()
+    [1, 2, 4]
+
+    >>> my_list1 = MyList()
+
+    >>> my_list1
+    []
+
+    >>> my_list1.append(-1)
+
+    >>> my_list1.append(-4)
+
+    >>> my_list1.append(-2)
+
+    >>> my_list1
+    [-1, -4, -2]
+
+    >>> my_list1.print_sorted()
+    [-4, -2, -1]
+
+    >>> my_list2 = MyList()
+
+    >>> my_list2
+    []
