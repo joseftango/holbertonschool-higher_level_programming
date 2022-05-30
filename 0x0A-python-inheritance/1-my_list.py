@@ -2,9 +2,6 @@
 """this is a class"""
 
 
-from typing import final
-
-
 class MyList(list):
     """class named MyList"""
     def print_sorted(self):
