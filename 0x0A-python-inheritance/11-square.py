@@ -16,4 +16,4 @@ class Square(Rectangle):
         return self.height * self.width
 
     def __str__(self):
-        return "[{}] {}/{}".format(type(self).__name__,self.width, self.height)
+        return f"[{type(self).__name__}] {self.width}/{self.height}"
