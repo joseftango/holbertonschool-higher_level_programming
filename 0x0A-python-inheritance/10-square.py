@@ -2,10 +2,11 @@
 """import Rectangle"""
 
 Rectangle = __import__('9-rectangle').Rectangle
-"""this is a class"""
+
 
 
 class Square(Rectangle):
+    """this is an inherited class"""
     def __init__(self, size):
         self.integer_validator("size", size)
         self.size = size
