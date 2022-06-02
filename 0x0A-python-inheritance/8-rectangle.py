@@ -1,10 +1,10 @@
 #!/usr/bin/python3
+"""import class BaseGeometry"""
 BaseGeometry = __import__('7-base_geometry').BaseGeometry
-
-"""this is a class"""
 
 
 class Rectangle(BaseGeometry):
+    """this is an inherited class"""
     def __init__(self, width, height):
         self.integer_validator("width", width)
         self.__width = width
