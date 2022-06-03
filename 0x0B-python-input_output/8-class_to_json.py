@@ -4,4 +4,4 @@
 
 def class_to_json(obj):
     """function that return dictionary discription"""
-    return  sorted(obj.__dict__)
+    return obj.__dict__
