@@ -1,12 +1,14 @@
 #!/usr/bin/python3
-"""import the class named Base from a module"""
+"""writing a class named Rectangle"""
 from models.base import Base
 
 
 class Rectangle(Base):
-    """this is a class Rectangle inherited from Base"""
+    """this is a class
+    Rectangle inherited from Base"""
 
     def __init__(self, width, height, x=0, y=0, id=None):
+        """__init__ that initialize instance attribute """
         super().__init__(id)
 
         self.__width = width
