@@ -1,16 +1,20 @@
 #!/usr/bin/python3
-"""writing a class named Rectangle"""
+"""Rectangle module
+This module defines a Rectangle class
+"""
 from models.base import Base
 
 
 class Rectangle(Base):
-    """this is a class
-    Rectangle inherited from Base"""
+    """Rectangle class
+    this is the class for rectangle
+    """
 
     def __init__(self, width, height, x=0, y=0, id=None):
-        """__init__ that initialize instance attribute """
+        """__init__ method
+        this method initializes on instance creation
+        """
         super().__init__(id)
-
         self.__width = width
         self.__height = height
         self.__x = x
