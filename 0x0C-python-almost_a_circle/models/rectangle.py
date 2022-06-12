@@ -71,3 +71,10 @@ class Rectangle(Base):
     def area(self):
         """method that calculates the area of rectangle"""
         return self.height * self.width
+
+    def display(self):
+        """method that prints rectangle """
+        for i in range(self.height):
+            for j in range(self.width):
+                print("#", end="")
+            print()
