@@ -80,5 +80,8 @@ class Rectangle(Base):
             print()
 
     def __str__(self):
+        """__str__ method
+        print the rectangle on print() or str()
+        """
         return f'[Rectange] ({self.__id}) {self.__x}/{self.__y} -'\
             f' {self.__width}/{self.__height}'
