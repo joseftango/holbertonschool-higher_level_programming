@@ -2,6 +2,7 @@
 """Rectangle module
 This module defines a Rectangle class
 """
+from this import d
 from models.base import Base
 
 
@@ -83,5 +84,4 @@ class Rectangle(Base):
         """__str__ method
         print the rectangle on print() or str()
         """
-        return f'[Rectange] ({self.id}) {self.x}/{self.y} -'\
-            f' {self.width}/{self.height}'
+        return "[Rectange] ({:d}) {:d}/{:d} - {:d}/{:d}".format(self.id, self.x, self.y, self.width, self.height)
