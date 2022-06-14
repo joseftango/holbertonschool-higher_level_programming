@@ -101,6 +101,8 @@ class Rectangle(Base):
                 setattr(self, my_list[i], args[i])
 
     def to_dictionary(self):
-        """method that hat assigns an argument to each attribute:"""
+        """update Method
+        this method will assign a key/value argument to attributes
+        """
         return {"id": self.id, "width": self.width, "height":
                 self.height, "x": self.x, "y": self.y}
