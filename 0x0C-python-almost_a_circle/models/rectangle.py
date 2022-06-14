@@ -2,6 +2,7 @@
 """Rectangle module
 This module defines a Rectangle class
 """
+from ast import arg
 from models.base import Base
 
 
@@ -89,3 +90,16 @@ class Rectangle(Base):
         """
         return f'[Rectange] ({self.id}) {self.__x}/{self.__y} -'\
             f' {self.__width}/{self.__height}'
+
+    def update(self, *args):
+        argc = len(args)
+        my_list = ["id", "width", "height", "x", "y"]
+        if argc > 0:
+            if argc > len(my_list):
+                argc = len(my_list)
+            for i in range(argc):
+                setattr(self, my_list[i], args[i])
+
+    def to_dictionary(self):
+        return {"id": self.id, "width": self.width, "height":
+                self.height, "x": self.x, "y": self.y}
