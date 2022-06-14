@@ -92,6 +92,9 @@ class Rectangle(Base):
             f' {self.__width}/{self.__height}'
 
     def update(self, *args):
+        """update Method
+        this method will assign a key/value argument to attributes
+        """
         argc = len(args)
         my_list = ["id", "width", "height", "x", "y"]
         if argc > 0:
@@ -99,10 +102,3 @@ class Rectangle(Base):
                 argc = len(my_list)
             for i in range(argc):
                 setattr(self, my_list[i], args[i])
-
-    def to_dictionary(self):
-        """update Method
-        this method will assign a key/value argument to attributes
-        """
-        return {"id": self.id, "width": self.width, "height":
-                self.height, "x": self.x, "y": self.y}
