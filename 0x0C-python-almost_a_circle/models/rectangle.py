@@ -88,8 +88,8 @@ class Rectangle(Base):
         """__str__ method
         print the rectangle on print() or str()
         """
-        return f'[Rectange] ({self.id}) {self.__x}/{self.__y} -\
-{self.__width}/{self.__height}'
+        return f"[Rectange] ({self.id}) {self.__x}/{self.__y} - \
+{self.__width}/{self.__height}"
 
     def update(self, *args):
         """update Method
