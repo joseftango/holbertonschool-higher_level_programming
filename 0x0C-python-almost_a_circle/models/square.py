@@ -29,6 +29,8 @@ class Square(Rectangle):
         self.height = self.width
 
     def update(self, *args, **kwargs):
+        """this method assign the key or value argument to attributes
+        """
         argc = len(args)
         my_list = ["id", "size", "x", "y"]
         if argc > len(my_list):
