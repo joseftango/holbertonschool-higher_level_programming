@@ -90,7 +90,7 @@ class Rectangle(Base):
         return f"[Rectangle] ({self.id}) {self.__x}/{self.__y} -\
  {self.__width}/{self.__height}"
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """update Method
         this method will assign a key/value argument to attributes
         """
@@ -101,3 +101,6 @@ class Rectangle(Base):
                 argc = len(my_list)
             for i in range(argc):
                 setattr(self, my_list[i], args[i])
+        if len(kwargs) > 0:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
