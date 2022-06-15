@@ -2,7 +2,6 @@
 """Rectangle module
 This module defines a Rectangle class
 """
-from ast import arg
 from models.base import Base
 
 
@@ -88,5 +87,17 @@ class Rectangle(Base):
         """__str__ method
         print the rectangle on print() or str()
         """
-        return f"[Rectangle] ({self.id}) {self.__x}/{self.__y} - \
-{self.__width}/{self.__height}"
+        return f"[Rectangle] ({self.id}) {self.__x}/{self.__y} -\
+ {self.__width}/{self.__height}"
+
+    def update(self, *args):
+        """update Method
+        this method will assign a key/value argument to attributes
+        """
+        argc = len(args)
+        my_list = ["id", "width", "height", "x", "y"]
+        if argc > 0:
+            if argc > len(my_list):
+                argc = len(my_list)
+            for i in range(argc):
+                setattr(self, my_list[i], args[i])
