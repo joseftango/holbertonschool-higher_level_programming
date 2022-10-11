@@ -7,16 +7,18 @@
 
 int check_cycle(listint_t *list)
 {
-	listint_t *traversal = list->next;
+	listint_t *traversal = list, *holder = list;
 
 	if (!list || !list->next)
 		return (0);
 
-	while (traversal != NULL)
+	while (holder)
 	{
-		if (traversal == list)
-			return (1);
 		traversal = traversal->next;
+		holder = holder->next->next;
+
+		if (traversal == holder)
+			return (1);
 	}
 
 	return (0);
