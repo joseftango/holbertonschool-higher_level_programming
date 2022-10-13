@@ -44,6 +44,7 @@ listint_t *insert_node(listint_t **head, int number)
 		if (pre_traversal->n > new_node->n)
 		{
 			new_node->next = pre_traversal;
+			*head = new_node;
 			break;
 		}
 
