@@ -38,20 +38,22 @@ listint_t *insert_node(listint_t **head, int number)
 		{
 			new_node->next = traversal;
 			pre_traversal->next = new_node;
-			break;
+			return (new_node);
 		}
 
 		if (pre_traversal->n > new_node->n)
 		{
 			new_node->next = pre_traversal;
 			*head = new_node;
-			break;
+			return (new_node);
 		}
 
 		traversal = traversal->next;
 		pre_traversal = pre_traversal->next;
 
 	}
+
+	traversal = new_node;
 
 	return (new_node);
 }
