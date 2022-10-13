@@ -23,7 +23,12 @@ listint_t *insert_node(listint_t **head, int number)
 
 	if (!(*head))
 	{
-		new_node->n = number;
+		*head = new_node;
+		return (new_node);
+	}
+
+	if ((*head)->n > new_node->n)
+	{
 		new_node->next = *head;
 		*head = new_node;
 		return (new_node);
@@ -31,6 +36,7 @@ listint_t *insert_node(listint_t **head, int number)
 
 	traversal = (*head)->next;
 	pre_traversal = *head;
+
 
 	while (traversal)
 	{
@@ -41,19 +47,15 @@ listint_t *insert_node(listint_t **head, int number)
 			return (new_node);
 		}
 
-		if (pre_traversal->n > new_node->n)
+		if (traversal->next == NULL)
 		{
-			new_node->next = pre_traversal;
-			*head = new_node;
+			traversal->next = new_node;
 			return (new_node);
 		}
 
 		traversal = traversal->next;
 		pre_traversal = pre_traversal->next;
-
 	}
 
-	traversal = new_node;
-
-	return (new_node);
+	return (NULL);
 }
