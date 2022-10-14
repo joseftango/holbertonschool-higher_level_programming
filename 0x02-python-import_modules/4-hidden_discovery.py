@@ -7,4 +7,4 @@ names = dir(hidden_4)
 
 for item in names:
     if item[0] != '_' and item[1] != '_':
-        print(f"item")
+        print(f"{item}")
