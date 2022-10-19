@@ -45,12 +45,20 @@ class Square:
             raise TypeError("position must be a tuple of 2 positive integers")
 
     def my_print(self):
-        """my_print method"""
+        """my_print
+        prints the square
+        """
+        k = 0
         if self.__size == 0:
             print()
-        for i in range(0, self.__size):
-            for p in range(0, self.__position[0]):
-                print(" ", end="")
-            for j in range(0, self.__size):
-                print("#", end="")
+            return None
+        for i in range(self.__position[1]):
+            print()
+        for i in range(self.__size):
+            for j in range(self.__size):
+                while k < self.__position[0]:
+                    print(' ', end='')
+                    k += 1
+                print('#', end='')
+            k = 0
             print()
