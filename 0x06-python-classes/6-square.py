@@ -7,7 +7,10 @@ class Square:
     def __init__(self, size=0, position=(0, 0)):
         """initializing function"""
         self.__size = size
-        self.__position = position
+        if type(position) == tuple and len(position) == 2\
+                and type(position) == int and type(position) == int:
+            if position >= 0 and position >= 0:
+                self.__position = position
 
     def area(self):
         """retrive area of square"""
