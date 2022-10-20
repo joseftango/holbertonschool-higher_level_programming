@@ -37,7 +37,7 @@ class Node:
 
 
 class SinglyLinkedList:
-
+    """class named SinglyLinkedList"""
     def __str__(self):
         """print a linked list"""
         my_str = ""
