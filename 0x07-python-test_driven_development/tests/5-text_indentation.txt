@@ -1,27 +1,52 @@
-================
-text_indentation
-================
+========================
+testing text_indentation
+========================
 
-Import the function:
-    text_indentation = __import__('5-text_indentation).text_indentation
+Using ``text_indentation``
+--------------------------
 
-possible tests:
+First import
+``text_indentation`` from the ``5-text_indentation`` module:
 
-    >>> text_indentation("""josef?mohamed.alen:""")
-    josef?
+    >>> text_indentation = __import__('5-text_indentation').text_indentation
 
-    mohamed.
+Now use it:
 
-    alen:
+	>>> text_indentation("Lorem?ipsum:dolor.sit amet")
+	Lorem?
+	<BLANKLINE>
+	ipsum:
+	<BLANKLINE>
+	dolor.
+	<BLANKLINE>
+	sit amet
 
-    >>> text_indentation("hello.hi:bye?")
-    hello.
+	>>> text_indentation(":?.")
+	:
+	<BLANKLINE>
+	?
+	<BLANKLINE>
+	.
+	<BLANKLINE>
+	>>> text_indentation("10:15?20.")
+	10:
+	<BLANKLINE>
+	15?
+	<BLANKLINE>
+	20.
+	<BLANKLINE>
+	>>> text_indentation("")
+	>>> text_indentation(55555)
+	Traceback (most recent call last):
+		...
+	TypeError: text must be a string
 
-    hi:
+	>>> text_indentation(None)
+	Traceback (most recent call last):
+		...
+	TypeError: text must be a string
 
-    bye?
-
-    >>> text_indentation(5)
-    Traceback (most recent call last):
-                ...
-    TypeError: 'int' object is not iterable
+	>>> text_indentation()
+	Traceback (most recent call last):
+		...
+	TypeError: text_indentation() missing 1 required positional argument: 'text'
