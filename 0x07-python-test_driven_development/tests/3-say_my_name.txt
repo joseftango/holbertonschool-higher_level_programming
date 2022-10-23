@@ -1,36 +1,50 @@
-===============
-Doctest say_my_name
-===============
+========================
+testing say_my_name
+========================
 
-Import the function:
+Using ``say_my_name``
+---------------------
+
+First import
+``say_my_name`` from the ``3-say_my_name`` module:
 
     >>> say_my_name = __import__('3-say_my_name').say_my_name
 
-possible tests:
+Now use it:
 
-    >>> say_my_name("hello","world")
-    My name is hello world
+    >>> say_my_name("lautaro", "martinez")
+    My name is lautaro martinez
 
-    >>> say_my_name("cristiano","ronaldo")
-    My name is cristiano ronaldo
+    >>> say_my_name("cristiano", "zanetti")
+    My name is cristiano zanetti
 
-    >>> say_my_name("josef","martinez")
-    My name is josef martinez
-
-    >>> say_my_name("mohamed","salah")
-    My name is mohamed salah
-
-    >>> say_my_name(5,"hello")
+    >>> say_my_name(50, "alex")
     Traceback (most recent call last):
-                ...
+        ...
     TypeError: first_name must be a string
 
-    >>> say_my_name("ahmed",80)
+    >>> say_my_name("500", 50)
     Traceback (most recent call last):
-                ...
+        ...
     TypeError: last_name must be a string
 
-    >>> say_my_name(20,10)
+    >>> say_my_name("string")
+    My name is string 
+
+    >>> say_my_name("888")
+    My name is 888 
+
+    >>> say_my_name(None)
     Traceback (most recent call last):
-                ...
+        ...
     TypeError: first_name must be a string
+
+    >>> say_my_name("unknown", None)
+    Traceback (most recent call last):
+        ...
+    TypeError: last_name must be a string
+
+    >>> say_my_name()
+    Traceback (most recent call last):
+        ...
+    TypeError: say_my_name() missing 1 required positional argument: 'first_name'
