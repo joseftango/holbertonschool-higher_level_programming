@@ -1,48 +1,61 @@
-=============================
-The 1-my_list module
-=============================
+====================
+testing print_sorted
+====================
 
-Import the class:
+Using ``print_sorted``
+---------------------
+
+First import
+``MyList`` from the ``1-my_list`` module:
 
     >>> MyList = __import__('1-my_list').MyList
 
-possible test:
+Now use it:
 
-    >>> my_list = MyList()
+	>>> l = MyList()
+	>>> l.append(5)
+	>>> l.append(8)
+	>>> l.append(0)
+	>>> l.append(2)
+	>>> l.print_sorted()
+	[0, 2, 5, 8]
 
-    >>> my_list
-    []
+	>>> l1 = MyList()
+	>>> l1.append(-1)
+	>>> l1.append(-4)
+	>>> l1.append(-2)
+	>>> l1.append(-3)
+	>>> l1.append(-5)
+	>>> l1.print_sorted()
+	[-5, -4, -3, -2, -1]
 
-    >>> my_list.append(1)
+	>>> l2 = MyList()
+	>>> l2
+	[]
 
-    >>> my_list.append(4)
+	>>> l3 = MyList()
+	>>> l3.append('-1')
+	>>> l3.append('-4')
+	>>> l3.append(6)
+	>>> l3.print_sorted()
+	Traceback (most recent call last):
+		...
+	TypeError: '<' not supported between instances of 'int' and 'str'
 
-    >>> my_list.append(2)
+	>>> l4 = MyList()
+	>>> l4.append("hello")
+	>>> l4.append(15)
+	>>> l4.append(10)
+	>>> l4.print_sorted()
+	Traceback (most recent call last):
+		...
+	TypeError: '<' not supported between instances of 'int' and 'str'
 
-    >>> my_list
-    [1, 4, 2]
+	>>> l5 = MyList()
+	>>> l5.append(None)
+	>>> l5.append(10)
+	>>> l5.print_sorted()
+	Traceback (most recent call last):
+		...
+	TypeError: '<' not supported between instances of 'int' and 'NoneType'
 
-    >>> my_list.print_sorted()
-    [1, 2, 4]
-
-    >>> my_list1 = MyList()
-
-    >>> my_list1
-    []
-
-    >>> my_list1.append(-1)
-
-    >>> my_list1.append(-4)
-
-    >>> my_list1.append(-2)
-
-    >>> my_list1
-    [-1, -4, -2]
-
-    >>> my_list1.print_sorted()
-    [-4, -2, -1]
-
-    >>> my_list2 = MyList()
-
-    >>> my_list2
-    []
