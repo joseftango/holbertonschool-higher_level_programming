@@ -16,6 +16,7 @@ class test_max_integer(unittest.TestCase):
         self.assertEqual(max_integer([10, 3, 4, 25]), 25)
         self.assertEqual(max_integer([111, 53, 46, 92]), 111)
         self.assertEqual(max_integer("hello"), "o")
+        self.assertEqual(max_integer([60]), 60)
         self.assertEqual(max_integer(), None)
 
     def test_negative_list(self):
