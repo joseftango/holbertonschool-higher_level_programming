@@ -1,39 +1,50 @@
-=========================
-testing integer_validator
-=========================
+====================
+-base_geometry module-
+====================
 
-Using ``integer_validator``
----------------------------
-
-First import
-``BaseGeometry`` from the ``7-base_geometry`` module:
-
+-Import=
+========
     >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
-Now use it:
 
-	>>> bg1 = BaseGeometry()
+-Function Description-
+======================
+Write a class BaseGeometry
 
-	>>> bg1.integer_validator("my_int", 12)
 
-	>>> bg1.integer_validator("width", 89)
+-Operation-
+===========
+• area() is not implemented
 
-	>>> bg1.integer_validator("name", "John")
-	Traceback (most recent call last):
-		...
-	TypeError: name must be an integer
+• <name> must be an integer
 
-	>>> bg1.integer_validator("age", 0)
-	Traceback (most recent call last):
-		...
-	ValueError: age must be greater than 0
+• <name> must be greater than 0
 
-	>>> bg1.integer_validator("job", None)
-	Traceback (most recent call last):
-		...
-	TypeError: job must be an integer
+-Tests-
+=======
 
-	>>> bg1.integer_validator("job")
-	Traceback (most recent call last):
-		...
-	TypeError: BaseGeometry.integer_validator() missing 1 required positional argument: 'value'
+Test case #0: Testing valid case
+
+    >>> b = BaseGeometry()
+    >>> b.integer_validator("Height", 12)
+
+Test case #1: Testing area() method
+
+    >>> b = BaseGeometry()
+    >>> b.area()
+    Traceback (most recent call last):
+    Exception: area() is not implemented
+
+Test case #2: Testing invalid value type
+
+    >>> b = BaseGeometry()
+    >>> b.integer_validator("Height", "Not a number")
+    Traceback (most recent call last):
+    TypeError: Height must be an integer
+
+Test case #3: Testing negative value
+
+    >>> b = BaseGeometry()
+    >>> b.integer_validator("Height", -200)
+    Traceback (most recent call last):
+    ValueError: Height must be greater than 0
