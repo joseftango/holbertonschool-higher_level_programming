@@ -2,9 +2,6 @@
 """creation of student class"""
 
 
-from subprocess import list2cmdline
-
-
 class Student:
     """class named Student"""
     def __init__(self, first_name, last_name, age):
