@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """writing a class named Base"""
 import json
+import os.path
 """import a json module"""
 
 
@@ -42,3 +43,24 @@ class Base:
             return []
         else:
             return json.loads(json_string)
+
+    @classmethod
+    def create(cls, **dictionary):
+        """returns an instance with
+        all attributes already set"""
+        if dictionary == None:
+            return None
+        dummy = cls(2, 3)
+        dummy.update(**dictionary)
+        return dummy
+
+    @classmethod
+    def load_from_file(cls):
+        """that returns a list of instances"""
+        li = []
+        if os.path.exists(f'{cls.__name__}.json'):
+            with open(f"{cls.__name__}.json", "r", encoding="utf-8") as f:
+                data = cls.from_json_string(f.read())
+            for i in data:
+                li.append(cls.create(**i))
+        return li
