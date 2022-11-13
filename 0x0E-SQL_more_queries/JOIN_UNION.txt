@@ -1,0 +1,79 @@
+...================|*********** JOIN TYPES *************|==================...
+...****************======================================******************...
+
+
+INNER JOIN :
+it returns only the record of the equal values from specified column
+
+SELECT * FROM Customer INNER JOIN City on Customer.cityid = City.cityid
+
+note :
+INNER JOIN keyword works only with = condition
+
+---------------------------------------------------------------------------------
+
+RIGHT JOIN :
+it returns only the records of the common values from specified column and
+the rest attributes of the RIGHT (after JOIN) specified table.
+
+ex:
+SELECT * FROM Customer RIGHT JOIN City on Customer.cityid = City.cityid
+
+---------------------------------------------------------------------------------
+
+LEFT JOIN :
+it returns only the records of the common values from specified column and
+the rest attributes of the LEFT (before JOIN) specified table.
+
+ex:
+SELECT * FROM Customer LEFT JOIN City on Customer.cityid = City.cityid
+
+
+FULL JOIN :
+it returns only the records of the common values from specified column and
+the rest attributes of the RIGHT (after JOIN) specified table and
+LEFT (before JOIN) specified table.
+
+
+ex:
+SELECT * FROM Customer FULL JOIN City on Customer.cityid = City.cityid
+
+
+
+********* UNION statement**********
+
+ex:
+SELECT name, cost, bids FROM items WHERE bids > 100
+UNION
+SELECT name, cost, bids FROM items WHERE cost > 1000
+
+
+this will displays a union tables with combining between the two condition
+
+note :
+when the query has been executed the UNION automatically remove the duplicates
+record which mutchs with both of this two conditions if we want to list this duplicated records
+we have to use :
+UNION ALL
+
+
+ex 2:
+now we will applicate UNION from table to other table :
+
+SELECT cLastName AS "Last Name", cFirstName AS "First Name",
+cPhone as "Phone", 'Customer' AS "Company"
+FROM customers
+UNION
+SELECT repLName, repFName, repPhone, sCompanyName
+FROM suppliers
+ORDER BY "Last Name";
+
+
+note :
+without talking about attributes the important that it must has the same number
+and same datatype if that didn't has same <attribute name> it normal.
+
+
+for more details visit :
+https://www.w3schools.com/sql/sql_union.asp
+

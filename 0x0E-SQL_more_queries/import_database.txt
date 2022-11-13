@@ -1,0 +1,16 @@
+********* how to import a database from sql file**********
+==========================================================
+
+first we have to create a database in our local ex :
+
+echo "CREATE DATABASE hbtn_0d_tvshows;" | mysql -hlocalhost -uroot -p
+
+
+then we have to import the choosen file with .sql extansion to our database :
+
+mysql -u root -p hbtn_0d_tvshows < download.sql
+
+
+
+
+------------ everything is done ------------

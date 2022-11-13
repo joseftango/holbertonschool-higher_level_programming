@@ -1,0 +1,172 @@
+***********--GRANT--*************
+
+The general syntax for granting user privileges is as follows:
+
+>>> GRANT PRIVILEGE ON database.table TO 'username'@'host';
+
+
+
+Run this GRANT statement, replacing sammy with your own MySQL user’s name,
+to grant these privileges to your user:
+
+>>> GRANT CREATE, ALTER, DROP, INSERT, UPDATE, DELETE, SELECT, REFERENCES, RELOAD on *.* TO 'sammy'@'localhost' WITH GRANT OPTION;
+
+
+Warning: Some users may want to grant their MySQL user the ALL PRIVILEGES privilege,
+which will provide them with broad superuser privileges akin to the root user’s privileges,
+like so:
+
+>>> GRANT ALL PRIVILEGES ON *.* TO 'sammy'@'localhost' WITH GRANT OPTION;
+
+
+If you need to revoke a permission, the structure is almost identical to granting it:
+
+>>> REVOKE type_of_permission ON database_name.table_name FROM 'username'@'host';
+
+
+
+You can review a user’s current permissions by running the SHOW GRANTS command:
+
+mysql> SHOW GRANTS FOR 'username'@'host';
+
+
+Just as you can delete databases with DROP, you can use DROP to delete a user:
+
+mysql> DROP USER 'username'@'localhost';
+
+
+After creating your MySQL user and granting them privileges, you can exit the MySQL client:
+
+mysql> exit
+
+
+In the future, to log in as your new MySQL user, you’d use a command like the following:
+
+mysql> mysql -u sammy -p
+
+
+The following illustrates the basic syntax of the GRANT statement:
+
+GRANT privilege [,privilege],.. 
+ON privilege_level
+TO account_name;
+
+
+
+This example grants the SELECT privilege on the table employees
+in the sample database to the user acount bob@localhost:
+
+GRANT SELECT
+ON employees
+TO bob@localhost;
+
+
+The following example grants UPDATE, DELETE, and INSERT privileges
+on the table employees to bob@localhost:
+
+GRANT INSERT, UPDATE, DELETE
+ON employees 
+TO bob@localhost;
+
+
+Global privileges :
+Global privileges apply to all databases in a MySQL Server.
+To assign global privileges, you use the *.* syntax, for example:
+
+GRANT SELECT
+ON *.* 
+TO bob@localhost;
+
+
+Database privileges :
+Database privileges apply to all objects in a database.To assign database-level privileges,
+you use the ON database_name.* syntax, for example:
+
+GRANT INSERT 
+ON classicmodels.* 
+TO bob@localhost;
+
+note:
+In this example, bob@localhost can insert data into all tables in the classicmodels database.
+
+
+Table privileges :
+Table privileges apply to all columns in a table. To assign table-level privileges,
+you use the ON database_name.table_name syntax, for example:
+
+GRANT DELETE
+ON classicmodels.employees
+TO bob@localhsot;
+
+note:
+In this example, bob@localhost can delete rows from the table employees
+in the database classicmodels.
+
+
+Column privileges :
+Column privileges apply to single columns in a table.
+You must specify the column or columns for each privilege, for example:
+
+GRANT 
+   SELECT (employeeNumner,lastName, firstName,email), 
+   UPDATE(lastName) 
+ON employees 
+TO bob@localhost;
+
+
+note :
+If you skip the database name, MySQL uses the default database
+or issues an error if there is no default database.
+
+------------------------------------------------------------------
+Proxy user privileges :
+
+allow one user to be a proxy for another. The proxy user gets all
+privileges of the proxied user. For example:
+
+GRANT PROXY 
+ON root 
+TO alice@localhost;
+
+note :
+In this example, alice@localhost assumes all privileges of root.
+
+-------------------------------------------------------------------------
+this command allows you to see all privileges of a specific user :
+
+SHOW GRANTS FOR super@localhost;
+
+output :
+
+Grants for super@localhost
+GRANT USAGE ON *.* TO 'super@localhost'
+
+The USAGE means that the super@localhost can log in the database but has no privilege.
+
+
+ex2:
+
+GRANT ALL 
+ON classicmodels.* 
+TO super@localhost;
+
+
+SHOW GRANTS FOR super@localhost;
+
+output:
+
+Grants for super@localhost
+GRANT USAGE ON *.* TO super@localhost
+GRANT ALL PRIVILEGES ON 'classicmodels'.* TO 'super@localhost'
+
+
+
+finally don't forget SHOW DATABASES command to list all databases in your mysql server
+
+after enter to database :
+
+USE database_name;
+
+you can list all the tables contained in database :
+
+show TABLES;

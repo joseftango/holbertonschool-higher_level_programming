@@ -1,0 +1,99 @@
+********** all constraints that already knew *************
+
+NOT NULL :
+won't have a null value
+
+ex:
+
+USE <database name>
+
+CREATE TABLE employee(
+emID int NOT NULL,
+Fname varchar(50),
+Lname varchar(50)
+);
+
+>>> INSETRT INTO employee(emID, Fname, Lname)
+VALUES (1, "fedy", "zabedy")
+### so emID must not be NULL
+
+-- we can write DESC <table name> to display :
+FIELD, TYPE, Null, Key, Default, Extra of a table in table format
+
+
+
+## UNIQUE :
+all values in acolumn are unique ex : id, salary, roll_num...
+
+## PRIMARY KEY :
+it's combination of NOT NULL and UNIQUE uniquely identify each row in table. ex : id ...
+
+## FOREIGN KEY :
+is a field in one table referring to PRIMARY KEY in another table .
+- child table: the table with the FOREGIN KEY
+- parent table (referenced): the table with the PRIMARY KEY
+ex:
+CREATE TABLE employee (
+EmpID int NOT NULL PRIMARY KEY,
+emname varchar(50) NOT NULL,
+empcity varchar(50),
+empsalary int
+)
+---- parent table above ----
+
+CREATE TABLE department (
+DeptID int NOT NULL PRIMARY KEY,
+Deptname varchar(20) NOT NULL,
+EmpID int FOREIGN KEY REFFRENCES employee(EmpID)
+);
+------- child table above has been created ---------
+
+
+## CHECK :
+all values in a column satisfies a specific condition.
+ex : age > 20
+
+## DEFAULT :
+set a default value
+
+
+## ENUM :
+An ENUM is a string object with a value chosen from a list of permitted values.
+They are enumerated explicitly in the column specification at table creation time.
+
+mysql> CREATE TABLE Shops(Id INTEGER, Name VARCHAR(55), 
+    -> Quality ENUM('High', 'Average', 'Low'));
+
+note :
+if we try to add values in table and Quality value is not one of those 3 above
+it will give us an error
+
+
+## SET :
+A SET can have zero or more values. Each of the values must be chosen
+from a list of permitted values.
+
+ex:
+mysql> CREATE TABLE Students(Id INTEGER, Name VARCHAR(55), 
+    -> Certificates SET('A1', 'A2', 'B1', 'C1')); 
+
+mysql> INSERT INTO Students VALUES(1, 'Paul', 'A1,B1');
+mysql> INSERT INTO Students VALUES(2, 'Jane', 'A1,B1,A2');
+mysql> INSERT INTO Students VALUES(3, 'Mark', 'A1,A2,D1,D2');
+
+mysql> SELECT * FROM Students;
++------+------+--------------+
+| Id   | Name | Certificates |
++------+------+--------------+
+|    1 | Paul | A1,B1        |
+|    2 | Jane | A1,A2,B1     |
+|    3 | Mark | A1,A2        |
++------+------+--------------+
+
+note:
+- Mark has only 2 value cause they are recognised the other values are not.
+
+
+
+
+

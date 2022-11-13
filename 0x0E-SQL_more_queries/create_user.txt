@@ -1,0 +1,75 @@
+*********** all known statement and keyword that already learned ***********
+
+very important if this error is still exists :
+ERROR 2002 (HY000): Can't connect to local MySQL server through socket
+
+visit this link :
+https://www.youtube.com/watch?v=db-T48crTSE
+
+or you can type this command :
+$ sudo service mysql start
+
+
+
+
+# CREATE USER :
+this command allows you to create a new user in your mysql server
+
+ex:
+
+# CREATE USER [IF NOT EXISTS] account_name
+
+IDENTIFIED BY 'password';
+
+or :
+
+# CREATE USER 'username'@'host' IDENTIFIED WITH authentication_plugin BY 'password';
+
+Run the following command to create a user that authenticates with 'caching_sha2_password'
+by (default) Be sure to change sammy to your preferred username and password
+to a strong password of your choosing:
+
+>>> CREATE USER 'sammy'@'localhost' IDENTIFIED BY 'password';
+
+
+we can choose authentication :
+	# CREATE USER 'sammy'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';
+
+****Granting a User Permissions:
+
+	>>> GRANT PRIVILEGE ON database.table TO 'username'@'host';
+
+Run this GRANT statement, replacing sammy with your own MySQL
+user’s name, to grant these privileges to your user:
+
+	>>> GRANT CREATE, ALTER, DROP, INSERT, UPDATE, DELETE, SELECT, REFERENCES, RELOAD on *.* TO 'sammy'@'localhost' WITH GRANT OPTION;
+
+
+Warning: Some users may want to grant their MySQL user the ALL PRIVILEGES :
+
+	>>> GRANT ALL PRIVILEGES ON *.* TO 'sammy'@'localhost' WITH GRANT OPTION;
+
+
+if we need to revoke a permission :
+	>>> REVOKE type_of_permission ON database_name.table_name FROM 'username'@'host';
+
+
+review a user’s current permissions by running the SHOW GRANTS command:
+
+	>>> SHOW GRANTS FOR 'username'@'host';
+
+
+Just as you can delete databases with DROP, you can use DROP to delete a user:
+
+	>>> DROP USER 'username'@'localhost';
+
+
+After creating your MySQL user and granting them privileges, you can exit the MySQL client:
+
+	>>>mysql> exit
+
+
+In the future, to log in as your new MySQL user, you’d use a command like the following:
+
+	>>> mysql -u root -p
+

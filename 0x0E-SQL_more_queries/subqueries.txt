@@ -1,0 +1,37 @@
+*************** subquerie in mysql****************
+
+as a remainder :
+to choose a database for working in it :
+
+mysql> USE <database_name>;
+
+to list all tables that contained in the current database :
+
+mysql> SHOW TABLES;
+
+
+======= subquerie with SELECT statement ======= :
+
+in this example we will use subqueries for listing values in some specific columns
+which has the values less than average value of the choosen attribute :
+
+SELECT emp_name, dept, salary
+FROM employees
+WHERE salary < (SELECT AVG(salary) FROM employees);
+
+
+
+-----------------------------------------------------
+
+NATURAL JOIN :
+it makes us retrive the specific attributes with it values by a column or more which contain
+inside other table with same values.
+
+ex:
+
+SELECT DISTINCT prodName, unitSalePrice
+FROM Products NATURAL JOIN OrderLines
+WHERE unitSalePrice > the average unit sale price
+
+
+
