@@ -1,22 +1,9 @@
 #!/usr/bin/node
 const process = require('process');
 const num = process.argv;
-const len = num.length;
-let greatest = 0;
-let wanted = 0;
-if (len === 2 || len === 3) {
+if (num.length === 2 || num.length === 3) {
   console.log(0);
 } else {
-  for (let i = 2; i < len; i++) {
-    if (parseInt(num[i]) > greatest) {
-      greatest = num[i];
-    }
-  }
-  for (let i = 2; i < len; i++) {
-    if (parseInt(num[i]) > wanted && parseInt(num[i]) !== greatest) {
-      wanted = num[i];
-    }
-  }
-
-  console.log(wanted);
+  num.sort((a, b) => a - b);
+  console.log(num[num.length - 2]);
 }
