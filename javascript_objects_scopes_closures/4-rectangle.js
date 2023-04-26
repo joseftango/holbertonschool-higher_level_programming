@@ -18,21 +18,15 @@ class Rectangle {
   }
 
   double () {
-    for (let i = 0; i < this.height * 2; i++) {
-      for (let j = 0; j < this.width * 2; j++) {
-        process.stdout.write('X');
-      }
-      process.stdout.write('\n');
-    }
+    this.width *= 2;
+    this.height *= 2;
   }
 
   rotate () {
-    for (let i = 0; i < this.width * 2; i++) {
-      for (let j = 0; j < this.height * 2; j++) {
-        process.stdout.write('X');
-      }
-      process.stdout.write('\n');
-    }
+    let tmp = 0;
+    tmp = this.width;
+    this.width = this.height;
+    this.height = tmp;
   }
 }
 
