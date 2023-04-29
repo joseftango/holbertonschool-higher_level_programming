@@ -7,5 +7,6 @@ const requestSettings = {
 };
 
 request(requestSettings, function (error, response, body) {
-  if (error === undefined) { console.log(`code: ${response.statusCode}`); }
+  if (error) { throw console.log(error); }
+  console.log(`code: ${response.statusCode}`);
 });
