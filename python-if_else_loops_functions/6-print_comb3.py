@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-for x in range(0, 120):
+for x in range(0, 100):
     if (x == 89):
         print(f"{x:02d}")
         break
