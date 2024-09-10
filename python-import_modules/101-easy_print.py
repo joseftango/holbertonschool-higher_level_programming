@@ -1,3 +1,3 @@
-#!/usr/bin/python3
-import printer_file
-exit(1)
+#!/usr/bin/
+if __name__ == '__main__':
+	import printer_file
