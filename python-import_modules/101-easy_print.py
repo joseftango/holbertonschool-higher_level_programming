@@ -1,2 +1,2 @@
 #!/usr/bin/python3
-import printer
+import printer_file
