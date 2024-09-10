@@ -1,3 +1,2 @@
 #!/usr/bin/python3
-if __name__ == '__main__':
-	open(1, 'w').write("Hello, World!\n")
+open(1, 'w').write("Hello, World!\n")
