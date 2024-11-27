@@ -1,11 +1,10 @@
 #!/usr/bin/python3
 def uppercase(str):
     upper_str = ''
-    for i in range(len(str)):
-        decimal = ord(str[i])
-        if decimal > 96 and decimal < 123:
-            upper_str += chr(decimal - 32)
-        else:
-            upper_str += chr(decimal)
+    for c in str:
+        if ord(c) >= 97 and ord(c) <= 122:
+            upper_str += chr(ord(c) - 32)
+            continue
+        upper_str += c
 
-    print('{}'.format(upper_str))
+    print(upper_str)
