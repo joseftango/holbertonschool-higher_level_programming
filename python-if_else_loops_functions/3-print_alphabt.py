@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-for c in range(ord('a'), ord('z')+1):
-    if chr(c) == 'q' or chr(c) == 'e':
-        continue
-    print('{}'.format(chr(c)), end='')
+i = 97
+while i < 123:
+    if i != 101 and i != 113:
+        print('{}'.format(chr(i)), end='')
+    i += 1
