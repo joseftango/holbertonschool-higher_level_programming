@@ -1,9 +1,14 @@
 #!/usr/bin/python3
 from sys import argv
-res = 0
-if len(argv) > 1:
-    for i in range(1, len(argv)):
-        res += int(argv[i])
 
-if __name__ == '__main__':
-    print(res)
+num_of_args = len(argv) - 1
+res = 0
+
+if num_of_args == 0:
+    print('{}'.format(num_of_args))
+elif num_of_args == 1:
+    print('{}'.format(num_of_args))
+else:
+    for i in range(1, num_of_args + 1):
+        res += int(argv[i])
+    print('{}'.format(res))
