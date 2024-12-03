@@ -1,3 +1,3 @@
 #!/usr/bin/python3
 def square_matrix_simple(matrix=[]):
-    return [[n**2 for n in list] for list in matrix]
+    return [[c * 2 for c in r] for r in matrix]
