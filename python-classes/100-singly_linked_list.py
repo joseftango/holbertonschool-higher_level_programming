@@ -49,14 +49,17 @@ class SinglyLinkedList:
         """method that insert node in sorted way"""
         new = Node(value)
         if self.__head is None:
+            new.next_node = self.__head
             self.__head = new
+
         elif self.__head.data >= new.data:
             new.next_node = self.__head
             self.__head = new
+
         else:
             current = self.__head
             while current.next_node is not None and \
                     current.next_node.data < new.data:
                 current = current.next_node
-                new.next_node = current.next_node
-                current.next_node = new
+            new.next_node = current.next_node
+            current.next_node = new
