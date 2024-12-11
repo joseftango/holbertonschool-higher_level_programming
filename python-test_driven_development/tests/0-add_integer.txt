@@ -22,9 +22,9 @@ Numbers
 98
 >>> add_integer(2)
 100
->>> add_integer(2.457, 5.318)
+>>> add_integer(2.4, 5.3)
 7
->>> add_integer(-3.457, 5.318)
+>>> add_integer(-3.4, 5.3)
 2
 
 Non-Numbers
