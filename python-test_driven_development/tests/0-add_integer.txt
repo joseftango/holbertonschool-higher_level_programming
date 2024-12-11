@@ -18,19 +18,19 @@ Numbers
 0
 >>> add_integer(100, -2)
 98
->>> add_integer(100.3, -2)
+>>> add_integer(100.75743, -2)
 98
 >>> add_integer(2)
 100
->>> add_integer(2.4, 5.3)
+>>> add_integer(2.57454, 5.3545)
 7
->>> add_integer(-3.4, 5.3)
+>>> add_integer(-3.7454, 5.3575)
 2
 >>> add_integer(6, 4.24891)
 10
 >>> add_integer(3.14561, 7)
 10
->>> add_integer(1.565445616, 2.568)
+>>> add_integer(1.565445616, 2.56578)
 3
 
 
