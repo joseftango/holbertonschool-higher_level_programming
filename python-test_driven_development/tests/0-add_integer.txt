@@ -1,0 +1,50 @@
+===============================
+apply doctest in 0-add_integer
+===============================
+
+This library is very simple, since it only has one function called
+``add_integer()``.
+
+``add_integer()`` returns the addition result of of its arguments.
+
+import our function add_integer()
+>>> add_integer = __import__('0-add_integer').add_integer
+
+Numbers
+=======
+>>> add_integer(1, 2)
+3
+>>> add_integer(2, -2)
+0
+>>> add_integer(100, -2)
+98
+>>> add_integer(100.3, -2)
+98
+>>> add_integer(2)
+100
+>>> add_integer(2.457, 5.318)
+7
+>>> add_integer(-3.457, 5.318)
+2
+
+Non-Numbers
+===========
+>>> add_integer('100.3', -2)
+Traceback (most recent call last):
+TypeError: a must be an integer
+
+>>> add_integer(5, "-2")
+Traceback (most recent call last):
+TypeError: b must be an integer
+
+>>> add_integer(4, "School")
+Traceback (most recent call last):
+TypeError: b must be an integer
+
+>>> add_integer([2, 5, 9], -2)
+Traceback (most recent call last):
+TypeError: a must be an integer
+
+>>> add_integer(0, None)
+Traceback (most recent call last):
+TypeError: b must be an integer
