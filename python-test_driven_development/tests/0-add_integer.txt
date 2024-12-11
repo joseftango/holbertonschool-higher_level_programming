@@ -26,6 +26,13 @@ Numbers
 7
 >>> add_integer(-3.4, 5.3)
 2
+>>> add_integer(6, 4.24891)
+10
+>>> add_integer(3.14561, 7)
+10
+>>> add_integer(1.565445616, 2.568)
+3
+
 
 Non-Numbers
 ===========
