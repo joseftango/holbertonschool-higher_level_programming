@@ -55,3 +55,19 @@ TypeError: a must be an integer
 >>> add_integer(0, None)
 Traceback (most recent call last):
 TypeError: b must be an integer
+
+>>> add_integer("s1", "s2")
+Traceback (most recent call last):
+TypeError: a must be an integer
+
+>>> add_integer(None, 5)
+Traceback (most recent call last):
+TypeError: a must be an integer
+
+>>> add_integer(8, None)
+Traceback (most recent call last):
+TypeError: b must be an integer
+
+>>> add_integer(None, None)
+Traceback (most recent call last):
+TypeError: a must be an integer
