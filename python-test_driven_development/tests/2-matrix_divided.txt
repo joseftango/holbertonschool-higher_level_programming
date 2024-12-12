@@ -158,3 +158,7 @@ TypeError: matrix must be a matrix (list of lists) of integers/floats
 >>> matrix_divided([[4, 10], [50, 100, 206, 62]], 2)
 Traceback (most recent call last):
 TypeError: Each row of the matrix must have the same size
+
+>>> matrix = [[3.54, -6.69, -4.20], [30.20, 44, -23.21], [9.554, -3.442, 2]]
+>>> matrix_divided(matrix, 3)
+[[1.18, -2.23, -1.4], [10.07, 14.67, -7.74], [3.18, -1.15, 0.67]]
