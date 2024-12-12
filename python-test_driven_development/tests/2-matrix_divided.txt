@@ -38,7 +38,10 @@ ZeroDivisionError: division by zero
 >>> matrix_divided(matrix, 3.555)
 [[0.28, 0.56, 0.84], [1.13, 1.41, 1.69]]
 
->>> matrix_divided(matrix, 35654.556215)
+>>> matrix_divided(matrix, float(315.4515))
+[[0.0, 0.01, 0.01], [0.01, 0.02, 0.02]]
+
+>>> matrix_divided(matrix, float(31546524))
 [[0.0, 0.0, 0.0], [0.0, 0.0, 0.0]]
 
 >>> matrix_divided(matrix, '3')
