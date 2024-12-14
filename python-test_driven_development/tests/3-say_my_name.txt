@@ -1,0 +1,60 @@
+==============================
+apply doctest in 3-say_my_name
+==============================
+
+This library is very simple, since it only has one function called
+``say_my_name()``.
+
+``say_my_name()`` prints a full name.
+
+import our function add_integer()
+	>>> say_my_name = __import__('3-say_my_name').say_my_name
+
+let's use it :
+
+Test case #0: Testing two strings input
+
+>>> say_my_name("John", "Smith")
+My name is John Smith
+
+>>> say_my_name("Walter", "White")
+My name is Walter White
+
+
+Test case #1: Testing 1st argument string 2nd string empty string
+
+>>> say_my_name("Bob")
+My name is Bob 
+
+Test case #2: Testing 2 empty strings arguments:
+
+>>> say_my_name("")
+My name is  
+
+Test case #3: Testing 1st argument int:
+
+>>> say_my_name(12, 'alex')
+Traceback (most recent call last):
+TypeError: first_name must be a string
+
+Test case #4: Testing 2end argument int:
+
+>>> say_my_name("mazen", 12)
+Traceback (most recent call last):
+TypeError: last_name must be a string
+
+Test case #5: Testing None argument:
+
+>>> say_my_name(None, "ali")
+Traceback (most recent call last):
+TypeError: first_name must be a string
+
+>>> say_my_name("ali", None)
+Traceback (most recent call last):
+TypeError: last_name must be a string
+
+Test case #6: Testing no arguments:
+>>> say_my_name()
+Traceback (most recent call last):
+TypeError: say_my_name() missing 1 required positional argument: 'first_name'
+
