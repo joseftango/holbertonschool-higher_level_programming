@@ -1,0 +1,21 @@
+===============================
+apply doctest in 100-matrix_mul
+===============================
+
+This library is very simple, since it only has one function called
+``matrix_mul()``.
+
+``matrix_mul()`` function that multiplies 2 matrices.
+
+import our function matrix_mul()
+	>>> matrix_mul = __import__('100-matrix_mul').matrix_mul
+
+let's use it :
+
+Test case #0: Testing 2 lists with same rows and columns
+>>> matrix_mul([[1, 2], [3, 4]], [[1, 2], [3, 4]])
+[[7, 10], [15, 22]]
+
+Test case #1: Testing 1st list nums of columns same as numbers of rows for 2nd list
+>>> matrix_mul([[1, 2]], [[3, 4], [5, 6]])
+[[13, 16]]
