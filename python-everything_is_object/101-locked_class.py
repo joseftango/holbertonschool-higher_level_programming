@@ -1,11 +1,14 @@
 #!/usr/bin/python3
-'''LockedClass Module'''
+"""LockedClass
+This class only allows first_name field
+"""
 
 
-class LockedClass:
-    '''LockedClass Class'''
-    def __setattr__(self, name, value):
-        if name == 'first_name':
-            self.__dict__['first_name'] = value
-        else:
-            raise AttributeError("'LockedClass' object has no attribute 'last_name'")
+class LockedClass(object):
+    """LockedClass Class
+    This class only allows first_name field
+    """
+    __slots__ = 'first_name'
+
+    def __init__(self, first_name="") -> None:
+        self.first_name = first_name
