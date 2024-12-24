@@ -39,3 +39,38 @@ my_list.extend([])
 my_list.print_sorted()
 []
 
+Test case #5: Testing __str__ method of MyList instance
+>>> my_list = MyList()
+>>> my_list.extend([1, 4, 2, 3, 5])
+>>> str(my_list)
+'[1, 4, 2, 3, 5]'
+>>> my_list
+[1, 4, 2, 3, 5]
+
+Test case #6: Testing append() method of MyList instance
+>>> my_list = MyList()
+>>> my_list.append(1)
+>>> my_list.append(4)
+>>> my_list.append(2)
+>>> my_list.append(3)
+>>> my_list.append(5)
+>>> my_list
+[1, 4, 2, 3, 5]
+>>> my_list.print_sorted()
+[1, 2, 3, 4, 5]
+>>> my_list
+[1, 4, 2, 3, 5]
+
+Test case #7: Testing print_sorted() method returns a new list or not
+>>> my_list = MyList()
+>>> my_list.append(1)
+>>> my_list.append(4)
+>>> my_list.append(2)
+>>> my_list.append(3)
+>>> my_list.append(5)
+>>> my_list
+[1, 4, 2, 3, 5]
+>>> my_list.print_sorted()
+[1, 2, 3, 4, 5]
+>>> my_list
+[1, 4, 2, 3, 5]
