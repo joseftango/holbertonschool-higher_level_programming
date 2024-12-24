@@ -39,3 +39,8 @@ Test case #5: Testing a negative integer value as input
 Traceback (most recent call last):
 ValueError: width must be greater than 0
 
+Test case #6: Testing without arguments
+>>> bg.integer_validator()
+Traceback (most recent call last):
+TypeError: BaseGeometry.integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
