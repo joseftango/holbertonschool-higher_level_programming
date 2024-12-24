@@ -74,3 +74,8 @@ Test case #7: Testing print_sorted() method returns a new list or not
 [1, 2, 3, 4, 5]
 >>> my_list
 [1, 4, 2, 3, 5]
+
+Test case #8: Testing print_sorted() method with empty list
+>>> my_list = MyList()
+>>> my_list.print_sorted()
+[]
