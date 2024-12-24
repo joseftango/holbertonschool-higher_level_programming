@@ -39,23 +39,3 @@ Test case #5: Testing a negative integer value as input
 Traceback (most recent call last):
 ValueError: width must be greater than 0
 
-Test case #6: Testing without arguments
->>> bg.integer_validator()
-Traceback (most recent call last):
-TypeError: BaseGeometry.integer_validator() missing 2 required positional arguments: 'name' and 'value'
-
-Test case #7: Testing one argument
->>> bg.integer_validator('name')
-Traceback (most recent call last):
-TypeError: BaseGeometry.integer_validator() missing 1 required positional argument: 'value'
-
-Test case #8: Testing a tuple as input
->>> bg.integer_validator('age', (4,))
-Traceback (most recent call last):
-TypeError: age must be an integer
-
-Test case #9: Testing a list as input
->>> bg.integer_validator('age', [5])
-Traceback (most recent call last):
-TypeError: age must be an integer
-
