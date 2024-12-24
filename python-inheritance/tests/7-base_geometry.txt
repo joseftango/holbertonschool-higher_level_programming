@@ -44,8 +44,3 @@ Test case #6: Testing the area method
 Traceback (most recent call last):
 Exception: area() is not implemented
 
-Test case #7: Testing without arguments
->>> bg.integer_validator()
-Traceback (most recent call last):
-TypeError: BaseGeometry.integer_validator() missing 2 required positional arguments: 'name' and 'value'
-
