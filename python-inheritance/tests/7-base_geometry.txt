@@ -1,0 +1,40 @@
+================================
+apply doctest in 7-base_geometry
+================================
+
+``integer_validator()`` method of BaseGeometry class that validates value
+
+import our class that contain integer_validator() method
+	>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+
+let's use it :
+
+Test case #0: Testing a string value as input
+>>> bg = BaseGeometry()
+>>> bg.integer_validator("my_int", '12')
+Traceback (most recent call last):
+TypeError: my_int must be an integer
+
+Test case #1: Testing a float value as input
+>>> bg.integer_validator("my_int", 15.22)
+Traceback (most recent call last):
+TypeError: my_int must be an integer
+
+Test case #2: Testing an integer value as input
+>>> bg.integer_validator("width", 89)
+
+Test case #3: Testing an None value as input
+>>> bg.integer_validator("width", None)
+Traceback (most recent call last):
+TypeError: width must be an integer
+
+Test case #4: Testing a zero value as input
+>>> bg.integer_validator("width", 0)
+Traceback (most recent call last):
+ValueError: width must be greater than 0
+
+Test case #5: Testing a negative integer value as input
+>>> bg.integer_validator("width", -50)
+Traceback (most recent call last):
+ValueError: width must be greater than 0
