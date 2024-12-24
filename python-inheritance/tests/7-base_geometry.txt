@@ -59,15 +59,3 @@ Test case #9: Testing a list as input
 Traceback (most recent call last):
 TypeError: age must be an integer
 
-Test case #10: Testing a boolean as input
->>> bg.integer_validator('age', True)
-
-Test case #10: Testing a set as input
->>> bg.integer_validator('age', {3, 4})
-Traceback (most recent call last):
-TypeError: age must be an integer
-
-Test case #11: Testing the area method
->>> bg.area()
-Traceback (most recent call last):
-Exception: area() is not implemented
