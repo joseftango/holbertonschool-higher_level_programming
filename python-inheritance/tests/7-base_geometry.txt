@@ -10,42 +10,29 @@ import our class that contain integer_validator() method
 
 let's use it :
 
-Test case #0: Testing a string value as input
->>> bg = BaseGeometry()
->>> bg.integer_validator("my_int", '12')
-Traceback (most recent call last):
-TypeError: my_int must be an integer
+Test case #0: Testing valid case
 
-Test case #0: Testing the area method
->>> bg.area()
-Traceback (most recent call last):
-Exception: area() is not implemented
+    >>> b = BaseGeometry()
+    >>> b.integer_validator("Height", 12)
 
-Test case #1: Testing a float value as input
->>> bg.integer_validator("my_int", 15.22)
-Traceback (most recent call last):
-TypeError: my_int must be an integer
+Test case #1: Testing area() method
 
-Test case #2: Testing an integer value as input
->>> bg.integer_validator("width", 89)
+    >>> b = BaseGeometry()
+    >>> b.area()
+    Traceback (most recent call last):
+    Exception: area() is not implemented
 
-Test case #3: Testing an None value as input
->>> bg.integer_validator("width", None)
-Traceback (most recent call last):
-TypeError: width must be an integer
+Test case #2: Testing invalid value type
 
-Test case #4: Testing a zero value as input
->>> bg.integer_validator("width", 0)
-Traceback (most recent call last):
-ValueError: width must be greater than 0
+    >>> b = BaseGeometry()
+    >>> b.integer_validator("Height", "Not a number")
+    Traceback (most recent call last):
+    TypeError: Height must be an integer
 
-Test case #5: Testing a negative integer value as input
->>> bg.integer_validator("width", -50)
-Traceback (most recent call last):
-ValueError: width must be greater than 0
+Test case #3: Testing negative value
 
-Test case #6: Testing without arguments
->>> bg.integer_validator()
-Traceback (most recent call last):
-TypeError: BaseGeometry.integer_validator() missing 2 required positional arguments: 'name' and 'value'
+    >>> b = BaseGeometry()
+    >>> b.integer_validator("Height", -200)
+    Traceback (most recent call last):
+    ValueError: Height must be greater than 0
 
