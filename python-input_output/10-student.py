@@ -14,15 +14,15 @@ class Student:
         of a Student instance'''
         Keys = list(self.__dict__.keys())
         full_dict_sorted = {i: self.__dict__[i] for i in sorted(Keys)}
-        if not attrs:
-            return full_dict_sorted
-        if type(attrs) is list:
-            only_attrs_dict = {}
-            for i in sorted(attrs):
-                if type(i) is not str:
-                    return full_dict_sorted
-                if hasattr(self, i):
-                    only_attrs_dict[i] = getattr(self, i)
-            return only_attrs_dict
 
-        return full_dict_sorted
+        if attrs in [None, []] or type(attrs) is not list:
+            return full_dict_sorted
+
+        only_attrs_dict = {}
+        for i in sorted(attrs):
+            if type(i) is not str:
+                return full_dict_sorted
+            if hasattr(self, i):
+                only_attrs_dict[i] = getattr(self, i)
+
+        return only_attrs_dict
