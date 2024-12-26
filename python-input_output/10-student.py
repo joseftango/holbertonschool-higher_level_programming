@@ -12,19 +12,16 @@ class Student:
     def to_json(self, attrs=None):
         '''retrieves a dictionary representation
         of a Student instance'''
-        Keys = list(self.__dict__.keys())
-        full_dict_sorted = {i: self.__dict__[i] for i in sorted(Keys)}
-
-        if not attrs:
-            return full_dict_sorted
+        my_dict = dict()
 
         if type(attrs) is list:
-            only_attrs_dict = {}
-            for i in sorted(attrs):
-                if type(i) is not str:
-                    return full_dict_sorted
-                if hasattr(self, i):
-                    only_attrs_dict[i] = getattr(self, i)
-            return only_attrs_dict
+            for elem in attrs:
+                if type(elem) is not str:
+                    return self.__dict__
 
-        return full_dict_sorted
+                if elem in self.__dict__:
+                    my_dict[elem] = self.__dict__[elem]
+
+            return my_dict
+
+        return self.__dict__
