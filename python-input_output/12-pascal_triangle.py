@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 '''12-pascal_triangle module'''
-from math import factorial
 
 
 def pascal_triangle(n):
