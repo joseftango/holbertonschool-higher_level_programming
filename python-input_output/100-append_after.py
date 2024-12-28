@@ -6,14 +6,14 @@ def append_after(filename="", search_string="", new_string=""):
     with open(filename, 'r', encoding='UTF-8') as f:
         lines = f.readlines()
         lines_cp = lines.copy()
-
+    res = []
     for i in range(len(lines)):
         if search_string in lines[i]:
-            first = lines_cp[:i + 1]
-            first.append(new_string)
-            last = lines_cp[i + 1:]
-            res = first + last
-            break
+            res.append(lines[i])
+            res.append(new_string)
+        else:
+            res.append(lines[i])
+
     my_str = ''
     for s in res:
         my_str += s
