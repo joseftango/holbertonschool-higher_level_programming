@@ -10,5 +10,5 @@ class Base:
         if id is not None:
             self.id = id
         else:
-            eval(type(self).__name__).__nb_objects += 1
-            self.id = eval(type(self).__name__).__nb_objects
+            Base.__nb_objects += 1
+            self.id = Base.__nb_objects
