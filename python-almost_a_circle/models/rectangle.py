@@ -80,3 +80,12 @@ class Rectangle(Base):
     def __str__(self):
         return f'[{self.__class__.__name__}] ({self.id})\
  {self.x}/{self.y} - {self.width}/{self.height}'
+
+    def update(self, *args):
+        '''that assigns an argument to each attribute'''
+        my_keys = ['id', 'width', 'height', 'x', 'y']
+        i = 0
+        while i in range(len(args)):
+            for k in my_keys[:len(args)]:
+                setattr(self, k, args[i])
+                i += 1
