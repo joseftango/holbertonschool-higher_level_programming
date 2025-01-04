@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 '''base module'''
 from json import dumps, loads
-from models import rectangle
+from . import rectangle
 '''import rectangle model'''
 
 
