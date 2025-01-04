@@ -48,6 +48,6 @@ class Base:
 
     @classmethod
     def create(cls, **dictionary):
-        my_obj = rectangle.Rectangle(10, 10)
-        my_obj.update(**dictionary)
-        return my_obj
+        dummy = rectangle.Rectangle(10, 10)
+        dummy.update(**dictionary)
+        return dummy
