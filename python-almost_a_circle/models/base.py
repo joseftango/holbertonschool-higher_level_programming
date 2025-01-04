@@ -2,6 +2,7 @@
 '''base module'''
 from json import dumps, loads
 from models import rectangle
+'''import rectangle model'''
 
 
 class Base:
@@ -49,7 +50,6 @@ class Base:
         string representation json_string'''
         if json_string in [None, '[]']:
             return []
-
         return loads(json_string)
 
     @classmethod
