@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 '''base module'''
-from json import dumps, dump
+from json import dumps, dump, loads
 
 
 class Base:
@@ -40,3 +40,11 @@ class Base:
             with open(f'{cls.__name__}.json',
                       'w', encoding='UTF-8') as f:
                 f.write(json_str)
+
+    def from_json_string(json_string):
+        '''returns the list of the JSON
+        string representation json_string'''
+        if json_string in [None, '[]']:
+            return []
+
+        return loads(json_string)
