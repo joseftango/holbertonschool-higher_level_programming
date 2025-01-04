@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-'''base module'''
+"""Base module
+defines the base class for Rectangle and Square to inherit from
+"""
 import json
 from . import rectangle
 
