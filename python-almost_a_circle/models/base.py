@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 '''base module'''
-from json import dumps, dump, loads
+from json import dumps, loads
+from models import rectangle
 
 
 class Base:
@@ -48,3 +49,11 @@ class Base:
             return []
 
         return loads(json_string)
+
+    @classmethod
+    def create(cls, **dictionary):
+        '''returns an instance with
+        all attributes already set'''
+        my_obj = rectangle.Rectangle(10, 10)
+        my_obj.update(**dictionary)
+        return my_obj
