@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 '''base module'''
-from json import dumps, loads
+import json
 from . import rectangle
 '''import rectangle model'''
 
@@ -23,7 +23,7 @@ class Base:
         representation of list_dictionaries'''
         if list_dictionaries in [None, []]:
             return "[]"
-        return dumps(list_dictionaries)
+        return json.dumps(list_dictionaries)
 
     @classmethod
     def save_to_file(cls, list_objs):
@@ -50,7 +50,7 @@ class Base:
         string representation json_string'''
         if json_string in [None, '[]']:
             return []
-        return loads(json_string)
+        return json.loads(json_string)
 
     @classmethod
     def create(cls, **dictionary):
