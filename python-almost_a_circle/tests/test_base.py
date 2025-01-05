@@ -6,28 +6,29 @@ from models.base import Base
 class Test_Base(unittest.TestCase):
 
     def test_base_id_auto_assignment(self):
-        b1 = Base()
-
-        self.assertIsNotNone(b1.id)
-        self.assertEqual(b1.id, 1)
-
-        b2 = Base()
-
-        self.assertIsNotNone(b2.id)
-        self.assertEqual(b2.id, 2)
-
-        b3 = Base()
-
-        self.assertIsNotNone(b3.id)
-        self.assertEqual(b3.id, 3)
-
-    def test_base_saving_id_passed(self):
         '''Test of Base() for assigning automatically an ID exists'''
-        """test_base_id_empty method
-        this method tests if the function properly works
-        with None and empty
-        """
         bTest = Base()
         self.assertEqual(bTest.id, 1)
         bTest = Base(None)
         self.assertEqual(bTest.id, 2)
+
+    def test_base_id_positive(self):
+        """test_base_id_positive method
+        this method tests if the function properly works
+        with positive numbers
+        """
+        b = Base(68)
+        self.assertEqual(b.id, 68)
+
+        b = Base(345)
+        self.assertEqual(b.id, 345)
+
+    def test_base_id_negative(self):
+        """test_base_id_positive method
+        this method tests if the function properly works
+        with negative numbers
+        """
+        b = Base(-44)
+        self.assertEqual(b.id, -44)
+        b = Base(-32)
+        self.assertEqual(b.id, -32)
