@@ -22,9 +22,12 @@ class Test_Base(unittest.TestCase):
         self.assertEqual(b3.id, 3)
 
     def test_base_saving_id_passed(self):
-        b1 = Base(20)
-        self.assertEqual(b1.id, 20)
-
-        b2 = Base(50)
-        self.assertEqual(b2.id, 50)
-
+        '''Test of Base() for assigning automatically an ID exists'''
+        """test_base_id_empty method
+        this method tests if the function properly works
+        with None and empty
+        """
+        bTest = Base()
+        self.assertEqual(bTest.id, 1)
+        bTest = Base(None)
+        self.assertEqual(bTest.id, 2)
