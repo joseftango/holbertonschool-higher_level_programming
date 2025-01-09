@@ -1,86 +1,118 @@
 #!/usr/bin/python3
-"""Unittest for Base.py
-"""
 import unittest
-import os
 from models.base import Base
-from models.rectangle import Rectangle
-from models.square import Square
+from json import dumps
 
 
-class TestBaseModule(unittest.TestCase):
-    """TestBaseModule class
-    this class is to test the Base class from models/base.py
-    """
-    def test_base_id_empty(self):
-        """test_base_id_empty method
-        this method tests if the function properly works
-        with None and empty
-        """
-        bTest = Base()
-        self.assertEqual(bTest.id, 1)
-        bTest = Base(None)
-        self.assertEqual(bTest.id, 2)
+class Test_Base(unittest.TestCase):
+    def setUp(self):
+        '''Reset the Base class's counter before each test.'''
+        Base._Base__nb_objects = 0
 
-    def test_base_id_positive(self):
-        """test_base_id_positive method
-        this method tests if the function properly works
-        with positive numbers
-        """
-        b = Base(68)
-        self.assertEqual(b.id, 68)
+    def test_Base_auto_id_assignment(self):
+        b1 = Base()
+        self.assertIsNotNone(b1.id)
+        self.assertEqual(b1.id, 1)
 
-        b = Base(345)
-        self.assertEqual(b.id, 345)
+        b2 = Base()
+        self.assertIsNotNone(b2.id)
+        self.assertEqual(b2.id, 2)
 
-    def test_base_id_negative(self):
-        """test_base_id_positive method
-        this method tests if the function properly works
-        with negative numbers
-        """
-        b = Base(-44)
-        self.assertEqual(b.id, -44)
-        b = Base(-32)
-        self.assertEqual(b.id, -32)
+        b12 = Base()
+        self.assertIsNotNone(b12)
+        self.assertEqual(b12.id, 3)
 
-    def test_base_to_json_string(self):
-        """test_base_to_json_string method
-        this method tests if the function properly works as expected
-        """
-        r = Rectangle(10, 7, 2, 8)
-        dictionary = r.to_dictionary()
-        json_dictionary = Base.to_json_string([dictionary])
-        self.assertEqual(type(json_dictionary), str)
+        b13 = Base(12)
 
-    def test_base_create(self):
-        """test_base_create method
-        Tests the base class create classmethod without kwarg
-        """
-        with self.assertRaises(TypeError) as err:
-            warn = Rectangle.create('string')
+        self.assertIsNotNone(b13)
+        self.assertEqual(b13.id, 12)
 
-        self.assertEqual(
-            "create() takes 1 positional argument but 2 were\
- given", str(err.exception))
+        b14 = Base()
 
-    def test_base_load_from_file(self):
-        """test_base_load_from_file method
-        Tests the base class load_from_file classmethod without kwarg
-        """
-        paths = ["Base.json", "Rectangle.json", "Square.json"]
-        for path in paths:
-            if os.path.exists(path):
-                os.remove(path)
+        self.assertIsNotNone(b14)
+        self.assertEqual(b14.id, 4)
 
-        empty_square = Square.load_from_file()
-        self.assertEqual(empty_square, [])
+        b15 = Base(None)
+        self.assertEqual(b15.id, 5)
 
-        empty_rect = Rectangle.load_from_file()
-        self.assertEqual(empty_rect, [])
+    def test_saving_id_passed_as_argument(self):
+        b1 = Base(50)
+        self.assertEqual(b1.id, 50)
+        b1 = Base(-10)
+        self.assertEqual(b1.id, -10)
+        b1 = Base(0)
+        self.assertEqual(b1.id, 0)
 
-        with self.assertRaises(TypeError) as err:
-            Rectangle.load_from_file('string')
+    def test_base_id_different_datatypes(self):
+        b1 = Base('-111')
+        self.assertEqual(b1.id, '-111')
 
-        self.assertEqual(
-            "load_from_file() takes 1 positional argument but 2 were\
- given", str(err.exception))
+        b2 = Base([1, 2, 3])
+        self.assertEqual(b2.id, [1, 2, 3])
+
+        b4 = Base({'name': 'Jon', 'age': 20})
+        self.assertEqual(b4.id, {'name': 'Jon', 'age': 20})
+
+        b5 = Base(True)
+        self.assertEqual(b5.id, True)
+
+        b6 = Base('Python')
+        self.assertEqual(b6.id, 'Python')
+
+        b7 = Base({1, 2, 3})
+        self.assertEqual(b7.id, {1, 2, 3})
+
+        b8 = Base((1, 2, 3))
+        self.assertEqual(b8.id, (1, 2, 3))
+
+        b8 = Base(55.215)
+        self.assertEqual(b8.id, 55.215)
+
+    def test_Base_method_to_json_string(self):
+        res = Base.to_json_string(None)
+        self.assertEqual(res, '[]')
+
+        res = Base.to_json_string([])
+        self.assertEqual(res, '[]')
+
+        res = None
+        res = Base.to_json_string([{'id': 1}])
+        self.assertIsNotNone(res)
+        self.assertEqual(res, '[{"id": 1}]')
+
+        res = None
+        res = Base.to_json_string([{'id': 1, 'name': 'Jo'}, {'id': 2, 'name': 'Andrew'}, {'id': 3, 'name': 'Paulo'}])
+        self.assertIsNotNone(res)
+        self.assertEqual(res, dumps([{'id': 1, 'name': 'Jo'}, {'id': 2, 'name': 'Andrew'}, {'id': 3, 'name': 'Paulo'}]))
+
+        res = None
+        res = Base.to_json_string([{'x': 2, 'y': 8, 'id': 1, 'height': 7, 'width': 10}])
+        self.assertIsNotNone(res)
+        self.assertEqual(res, dumps([{'x': 2, 'y': 8, 'id': 1, 'height': 7, 'width': 10}]))
+
+    def test_Base_method_from_json_string(self):
+
+        res = None
+        res = Base.from_json_string(None)
+        self.assertIsNotNone(res)
+        self.assertEqual(res, [])
+
+        res = None
+        res = Base.from_json_string('[]')
+        self.assertIsNotNone(res)
+        self.assertEqual(res, [])
+
+        res = None
+        res = Base.from_json_string('[{"id": 1}]')
+        self.assertIsNotNone(res)
+        self.assertEqual(res, [{"id": 1}])
+
+        res = None
+        res = Base.from_json_string('[{"id": 89, "width": 10, "height": 4}, {"id": 7, "width": 1, "height": 7}]')
+        self.assertIsNotNone(res)
+        self.assertEqual(res, [{"id": 89, "width": 10, "height": 4}, {"id": 7, "width": 1, "height": 7}])
+
+        res = None
+        res = Base.from_json_string('[{"x": 2, "y": 8, "id": 1, "height": 7, "width": 10}]')
+        self.assertIsNotNone(res)
+        self.assertEqual(res, [{'x': 2, 'y': 8, 'id': 1, 'height': 7, 'width': 10}])
