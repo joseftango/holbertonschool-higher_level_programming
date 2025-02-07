@@ -17,8 +17,8 @@ if __name__ == '__main__':
                                  db=database)
 
     cursor = connection.cursor()
-    cursor.execute(f'SELECT * FROM states WHERE name = "{state_name}"\
-                   ORDER BY id ASC')
+    cursor.execute('SELECT * FROM states WHERE name = "{}"\
+                   ORDER BY id ASC'.format(state_name))
 
     rows = cursor.fetchall()
     for row in rows:
