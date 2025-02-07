@@ -17,7 +17,8 @@ if __name__ == '__main__':
                                  db=database)
 
     cursor = connection.cursor()
-    cursor.execute('SELECT * FROM states WHERE name = "{}"\
+    cursor.execute('SELECT * FROM states WHERE \
+                   name LIKE "A%" AND name = "{}" \
                    ORDER BY id ASC'.format(state_name))
 
     rows = cursor.fetchall()
