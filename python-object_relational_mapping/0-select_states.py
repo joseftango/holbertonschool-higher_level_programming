@@ -1,8 +1,9 @@
 #!/usr/bin/python3
 '''0-select_states module'''
+
+
 from sys import argv
 import MySQLdb
-
 
 username = argv[1]
 password = argv[2]
