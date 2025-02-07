@@ -12,7 +12,7 @@ connection = MySQLdb.connect(host='localhost', user=username,
                              passwd=password, db=database)
 cursor = connection.cursor()
 
-cursor.execute('SELECT * FROM states')
+cursor.execute('SELECT * FROM states ORDER BY id ASC')
 rows = cursor.fetchall()
 for row in rows:
     print(row)
