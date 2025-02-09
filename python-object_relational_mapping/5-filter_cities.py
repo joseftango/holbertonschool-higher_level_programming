@@ -23,9 +23,7 @@ if __name__ == '__main__':
                     ORDER BY cities.id ASC;'.format(state_name))
 
     rows = cursor.fetchall()
-    for row in rows:
-        print('{}, '.format(*row), end='')
-    print()
+    print(', '.join(row[0] for row in rows))
 
     cursor.close()
     connection.close()
