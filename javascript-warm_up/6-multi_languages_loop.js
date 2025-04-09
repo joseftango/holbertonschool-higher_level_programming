@@ -1,7 +1,10 @@
 #!/usr/bin/node
-const myarr = ['C is fun', 'Python is cool', 'JavaScript is amazing'];
-let i = 0;
-while (i < myarr.length) {
-  console.log(myarr[i]);
-  i++;
+const first = 'C is fun';
+const second = 'Python is cool';
+const third = 'JavaScript is amazing';
+
+const list = [first, second, third];
+
+for (const txt of list) {
+  console.log(txt);
 }
