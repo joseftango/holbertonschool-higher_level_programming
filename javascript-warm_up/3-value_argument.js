@@ -1,8 +1,9 @@
 #!/usr/bin/node
-const args = process.argv;
-const len = args.length;
-if (len === 2) {
+const args = process.argv.slice(2);
+if (args[0] === undefined) {
   console.log('No argument');
 } else {
-  for (let i = 2; i < len; i++) { console.log(args[i]); }
+  for (const ar of args) {
+    console.log(ar);
+  }
 }
