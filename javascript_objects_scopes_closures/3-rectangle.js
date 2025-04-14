@@ -8,12 +8,16 @@ class Rectangle {
   }
 
   print () {
+    let MyRectangle = '';
     for (let i = 0; i < this.height; i++) {
       for (let j = 0; j < this.width; j++) {
-        process.stdout.write('X');
+        MyRectangle += 'X';
       }
-      process.stdout.write('\n');
+      if (i < this.height - 1) {
+        MyRectangle += '\n';
+      }
     }
+    console.log(MyRectangle);
   }
 }
 
