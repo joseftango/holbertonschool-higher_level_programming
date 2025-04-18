@@ -1,12 +1,7 @@
 #!/usr/bin/node
-const process = require('process');
 const request = require('request');
-const requestSettings = {
-  method: 'HEAD',
-  url: process.argv[2]
-};
+const url = process.argv[2];
 
-request(requestSettings, function (error, response, body) {
-  if (error) { throw console.log(error); }
+request.get(url).on('response', function (response) {
   console.log(`code: ${response.statusCode}`);
 });
